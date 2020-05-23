@@ -1,0 +1,27 @@
+<% @article.each do |t| %>
+	<%= t.title%><br>
+	<%= t.author%><br>
+	<%= t.content%> <br>
+	<a href='/home/update_form/<%=t.id%>'>수정</a> <br>
+	<a href='/home/delete/<%=t.id%>'>삭제</a> <br> <br>
+	
+
+	<form method='post' action='/reply_create/<%=t.id%>'>
+		<textarea type='text' name='reply_content'> </textarea> 
+		<input type='submit'><br>
+	</form>
+
+
+	<% t.replies.each do |r|%>
+		<%=r.reply_content%> 
+		<a href='/reply_delete/<%=r.id%>'>삭제하기</a>
+		<a href = '/reply_update_form/<%=r.id%>'>수정하기</a> <br>
+		
+	<%end%>
+	
+
+	
+	<hr>
+<%end%>
+
+<a href='/home/create_form'> 글쓰러가기 </a>

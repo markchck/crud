@@ -1,0 +1,6 @@
+<form action='/home/update/<%=@article.id%>>' method='post'>
+	<input type='text' name='title' placeholder='제목' value='<%=@article.title%>'> <br>
+	<input type='text' name='author' placeholder='저자' value='<%=@article.author%>'> <br>
+	<textarea name='content'> <%=@article.content%> </textarea><hr>
+	<input type='submit' value='글작성'>
+</form>
